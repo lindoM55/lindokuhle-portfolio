@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to my first website</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+            
+            body {
+                font-family: 'Inter', Arial, sans-serif;
+                background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+                margin: 0;
+                padding: 0;
+                color: #22223b;
+            }
+            .container {
+                max-width: 800px;
+                margin: 40px auto;
+                background: #fff;
+                border-radius: 24px;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+                padding: 40px;
+            }
+            h1 {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #3a3a5a;
+                margin-bottom: 24px;
+                background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            h2 {
+                color: #4f46e5;
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+            }
+            .intro-section {
+                text-align: center;
+                padding: 32px;
+                background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+                border-radius: 16px;
+                margin-bottom: 32px;
+                border: 1px solid rgba(79, 70, 229, 0.1);
+            }
+            .name {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #1e1b4b;
+                margin-bottom: 8px;
+                letter-spacing: -0.5px;
+            }
+            .title {
+                font-size: 1.25rem;
+                color: #4f46e5;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+            .status {
+                display: inline-block;
+                padding: 8px 16px;
+                background: #4f46e5;
+                color: white;
+                border-radius: 50px;
+                font-weight: 500;
+                font-size: 0.9rem;
+                margin-top: 8px;
+                box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+            }
+            .social-media-section {
+                text-align: center;
+                margin-top: 40px;
+                padding-top: 24px;
+                border-top: 1px solid #e6eef8;
+            }
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            .social-links a {
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: #eef2ff;
+                color: #4f46e5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            }
+            .social-links a:hover {
+                background: #4f46e5;
+                color: #fff;
+                transform: translateY(-4px);
+                box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            }
+            .social-links svg {
+                width: 24px;
+                height: 24px;
+            }
+            p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 16px; }
+            fieldset {
+                border: none;
+                background: #f3f4f6;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                margin-bottom: 24px;
+                padding: 20px 16px 12px 16px;
+            }
+            legend { font-weight: 700; color: #4f46e5; }
+            img.profile {
+                display: inline-block; max-width: 180px; height: auto;
+                margin: 12px 8px 12px 0; border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 2px solid #e0e7ff;
+            }
+            mark { background: #c7d2fe; color: #3730a3; border-radius: 4px; padding: 2px 6px; }
+            @media (max-width: 800px) { .container { padding: 12px; } img.profile { max-width: 100px; } }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <div class="intro-section">
+                <div class="name">Lindokuhle Thabede</div>
+                <div class="title">Full-Stack Developer in Training</div>
+                <p style="color: #4b5563; margin-bottom: 16px;">ICT Student at Durban University of Technology</p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <span class="status">First Year Student</span>
+                    <span class="status" style="background: #8b5cf6;">Aspiring Full-Stack Developer</span>
+                    <span class="status" style="background: #3730a3;">Tech Enthusiast</span>
+                </div>
+            </div>
+
+            <!-- Local images: use forward slashes on Windows when embedding local files. -->
+            <img class="profile" src="C:/Users/LINDOKUHLE/Pictures/IMG-20250824-WA0006.jpg" alt="Lindokuhle's feature">
+            <img class="profile" src="D:/WhatsApp Image 2025-01-16 at 16.21.58_be8465a6.jpg" alt="Lindokuhle Profile">
+            <img class="profile" src="C:/Users/LINDOKUHLE/Pictures/IMG-20250824-WA0005.jpg" alt="Team">
+
+            <fieldset>
+                <legend><h2>Behind the Scene</h2></legend>
+                <p>For me, my curiosity drives my passion and my passion determines my dream.<br>
+                The more I'm curious about something—like IT, software development, and cyber security—I've always wondered how these apps we use come to be, who had the idea first, and how systems and information are protected. Who carries the responsibility of guiding these systems? This is a huge role, and I want to be that person one day who carries such a responsibility.</p>
+            </fieldset>
+
+            <fieldset>
+                <legend><h2>Skill</h2></legend>
+                <p>Programming languages I'm currently learning are <mark>HTML</mark>, <mark>CSS</mark>, and <mark>C#</mark>.<br>
+                It might seem confusing to some, but this approach helps me manage stress and pressure. If one language is giving me a hard time, instead of stressing, I just move to another one. Eventually, that becomes my stress reliever, helping me calm down and continue doing what I love rather than walking away. Web development is a long journey, so moving to another language is like a short stop in a long journey.</p>
+            </fieldset>
+            <fieldset>
+                <legend><h2>Passion</h2></legend>
+                <p>My passion lies in creating innovative solutions that make a difference. I am particularly interested in web development and cybersecurity, as they offer endless opportunities for creativity and problem-solving. I am eager to learn more and contribute to the tech community.</p>
+            </fieldset> 
+
+
+                    <!-- Modern AI Assistant UI -->
+                    <fieldset style="position: relative; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);">
+                        <legend><h2>Your AI Guide</h2></legend>
+                        <div style="background: #4f46e5; color: white; padding: 16px; border-radius: 12px; margin-bottom: 20px;">
+                            <p style="margin: 0; font-weight: 500;">👋 Hi! I'm Lindokuhle's AI assistant, here to help you explore the portfolio.</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                            <div style="background: #eef2ff; padding: 12px; border-radius: 8px; border: 1px solid #e0e7ff;">
+                                <h3 style="color: #4f46e5; margin: 0 0 8px 0; font-size: 1rem;">📚 Ask About</h3>
+                                <ul style="margin: 0; padding-left: 20px; color: #4b5563;">
+                                    <li>Background & Education</li>
+                                    <li>Programming Skills</li>
+                                    <li>Tech Passions</li>
+                                </ul>
+                            </div>
+                            <div style="background: #eef2ff; padding: 12px; border-radius: 8px; border: 1px solid #e0e7ff;">
+                                <h3 style="color: #4f46e5; margin: 0 0 8px 0; font-size: 1rem;">💡 Sample Questions</h3>
+                                <ul style="margin: 0; padding-left: 20px; color: #4b5563;">
+                                    <li>"Tell me about your skills"</li>
+                                    <li>"How do you learn coding?"</li>
+                                    <li>"What's your passion in tech?"</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chat-container" style="
+                            height: 300px; 
+                            overflow-y: auto; 
+                            margin-bottom: 16px; 
+                            padding: 16px; 
+                            background: #ffffff; 
+                            border-radius: 12px; 
+                            border: 1px solid #e6eef8;
+                            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+                            scroll-behavior: smooth;">
+                            <div id="ai-response" style="white-space:pre-wrap;"></div>
+                        </div>
+                        <div style="position: relative; background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid #e6eef8;">
+                            <textarea 
+                                id="ai-prompt" 
+                                rows="2" 
+                                style="width: 100%; 
+                                box-sizing: border-box; 
+                                padding: 16px;
+                                padding-right: 120px;
+                                border-radius: 12px;
+                                border: 2px solid #e0e7ff;
+                                resize: none;
+                                font-family: inherit;
+                                font-size: 1rem;
+                                margin-bottom: 8px;
+                                background: #ffffff;
+                                transition: border-color 0.2s, box-shadow 0.2s;"
+                                placeholder="Ask me anything about Lindokuhle..."></textarea>
+                            <button 
+                                id="ai-send" 
+                                style="position: absolute; 
+                                right: 24px; 
+                                top: 50%; 
+                                transform: translateY(-50%);
+                                background: #4f46e5;
+                                color: white;
+                                border: none;
+                                padding: 12px 24px;
+                                border-radius: 12px;
+                                cursor: pointer;
+                                font-weight: 500;
+                                transition: all 0.2s;
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;">
+                                <span>Ask AI</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13"></path>
+                                    <path d="M22 2L15 22L11 13L2 9L22 2"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="ai-status" style="color:#6b7280; font-size: 0.9rem; margin-top: 8px; text-align: center; min-height: 20px;"></div>
+                        <select id="ai-model" style="display:none;">
+                            <option value="gemma3:270m">gemma3:270m</option>
+                        </select>
+                        <style>
+                            #ai-prompt:focus {
+                                outline: none;
+                                border-color: #4f46e5;
+                                box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+                            }
+                            #ai-send:hover {
+                                background: #4338ca;
+                                transform: translateY(-50%) translateX(-2px);
+                            }
+                            #ai-send:active {
+                                transform: translateY(-50%) scale(0.98);
+                            }
+                            .chat-container::-webkit-scrollbar {
+                                width: 8px;
+                            }
+                            .chat-container::-webkit-scrollbar-track {
+                                background: #f1f5f9;
+                                border-radius: 4px;
+                            }
+                            .chat-container::-webkit-scrollbar-thumb {
+                                background: #cbd5e1;
+                                border-radius: 4px;
+                            }
+                            .chat-container::-webkit-scrollbar-thumb:hover {
+                                background: #94a3b8;
+                            }
+                        </style>
+                    </fieldset>
+
+            <div class="social-media-section">
+                <h2>Connect With Me</h2>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/tk.bhizera.5" target="_blank" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/>
+                        </svg>
+                    </a>
+                    <a href="#" target="_blank" title="GitHub (Coming Soon)" style="cursor: not-allowed; filter: grayscale(0.8);">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="http://www.linkedin.com/in/lindokuhle-mathebula-5b581b385" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+            <script>
+                const sendBtn = document.getElementById('ai-send');
+                const clearBtn = document.getElementById('ai-clear');
+                const promptEl = document.getElementById('ai-prompt');
+                const modelEl = document.getElementById('ai-model');
+                const statusEl = document.getElementById('ai-status');
+                const responseEl = document.getElementById('ai-response');
+
+                async function sendPrompt() {
+                    const prompt = promptEl.value.trim();
+                    if (!prompt) return;
+                    
+                    // Disable send button and show typing indicator
+                    sendBtn.disabled = true;
+                    sendBtn.style.opacity = '0.7';
+                    statusEl.innerHTML = '<span style="color: #4f46e5">✏️ AI is typing...</span>';
+                    
+                    try {
+                        const controller = new AbortController();
+                        const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+
+                        const res = await fetch('http://127.0.0.1:8080/api/ollama', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ prompt, model: modelEl.value }),
+                            signal: controller.signal
+                        });
+                        
+                        clearTimeout(timeoutId);
+
+                        if (!res.ok) {
+                            throw new Error(await res.text());
+                        }
+
+                        const data = await res.json();
+                        if (data.ok && data.ollama) {
+                            const o = data.ollama;
+                            let response = '';
+                            
+                            if (o.text) {
+                                response = o.text;
+                            } else if (o.output) {
+                                response = o.output;
+                            } else if (o.choices && o.choices[0] && (o.choices[0].content || o.choices[0].text)) {
+                                response = o.choices[0].content || o.choices[0].text;
+                            } else {
+                                response = JSON.stringify(o, null, 2);
+                            }
+
+                            // Format the response in a chat-like bubble
+                            const userBubble = `<div style="margin-bottom: 16px;">
+                                <div style="background: #4f46e5; color: white; padding: 12px; border-radius: 12px 12px 12px 0; display: inline-block; max-width: 80%;">
+                                    ${prompt}
+                                </div>
+                            </div>`;
+                            
+                            const aiBubble = `<div style="margin-bottom: 16px;">
+                                <div style="background: #e0e7ff; color: #1e1b4b; padding: 12px; border-radius: 12px 12px 0 12px; display: inline-block; max-width: 80%;">
+                                    ${response}
+                                </div>
+                            </div>`;
+
+                            responseEl.innerHTML += userBubble + aiBubble;
+                            statusEl.textContent = '';
+                            promptEl.value = '';
+
+                            // Scroll to the bottom of the chat
+                            responseEl.parentElement.scrollTop = responseEl.parentElement.scrollHeight;
+                        } else {
+                            throw new Error('Unexpected response from server');
+                        }
+                    } catch (e) {
+                        let errorMessage;
+                        if (e.name === 'AbortError') {
+                            errorMessage = 'Request timed out. Please try again.';
+                        } else if (e.message === 'Failed to fetch') {
+                            errorMessage = 'Cannot connect to the server. Please make sure the server is running on port 8080.';
+                        } else {
+                            errorMessage = `Error: ${e.message}`;
+                        }
+                        statusEl.innerHTML = `<span style="color: #dc2626">❌ ${errorMessage}</span>`;
+                        console.error('Error:', e);
+                    } finally {
+                        // Re-enable send button
+                        sendBtn.disabled = false;
+                        sendBtn.style.opacity = '1';
+                    }
+                }
+
+                sendBtn.addEventListener('click', sendPrompt);
+                clearBtn.addEventListener('click', () => { promptEl.value = ''; responseEl.textContent = ''; statusEl.textContent = ''; });
+
+                // Allow Ctrl+Enter to send
+                promptEl.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) sendPrompt(); });
+            </script>
+    </body>
+</html>

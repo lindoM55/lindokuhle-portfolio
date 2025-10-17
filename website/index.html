@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to my first website</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', Arial, sans-serif;
+                background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+                margin: 0;
+                padding: 0;
+                color: #22223b;
+            }
+            .container {
+                max-width: 700px;
+                margin: 40px auto;
+                background: #fff;
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+                padding: 32px;
+            }
+            h1 {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #3a3a5a;
+                margin-bottom: 16px;
+            }
+            h2 {
+                color: #4f46e5;
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+            }
+            p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 16px; }
+            fieldset {
+                border: none;
+                background: #f3f4f6;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                margin-bottom: 24px;
+                padding: 20px 16px 12px 16px;
+            }
+            legend { font-weight: 700; color: #4f46e5; }
+            img.profile {
+                display: inline-block; max-width: 180px; height: auto;
+                margin: 12px 8px 12px 0; border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 2px solid #e0e7ff;
+            }
+            mark { background: #c7d2fe; color: #3730a3; border-radius: 4px; padding: 2px 6px; }
+            @media (max-width: 800px) { .container { padding: 12px; } img.profile { max-width: 100px; } }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to My Cool Personal Portfolio Website</h1>
+            <p>My name is Lindokuhle, an ICT student at Durban University of Technology.</p>
+            <p>Uprising Web & Software Developer</p>
+
+            <!-- Local images: use forward slashes on Windows when embedding local files. -->
+            <img class="profile" src="D:\WhatsApp Image 2025-01-16 at 16.21.58_be8465a6.jpg" alt="Lindokuhle's feature">
+            <img class="profile" src="C:/Users/LINDOKUHLE/Pictures/IMG-20250824-WA0002.jpg" alt="Boss">
+            <img class="profile" src="C:/Users/LINDOKUHLE/Pictures/IMG-20250824-WA0005.jpg" alt="Team">
+
+            <fieldset>
+                <legend><h2>Behind the Scene</h2></legend>
+                <p>For me, my curiosity drives my passion and my passion determines my dream.<br>
+                The more I'm curious about something—like IT, software development, and cyber security—I've always wondered how these apps we use come to be, who had the idea first, and how systems and information are protected. Who carries the responsibility of guiding these systems? This is a huge role, and I want to be that person one day who carries such a responsibility.</p>
+            </fieldset>
+
+            <fieldset>
+                <legend><h2>Skill</h2></legend>
+                <p>Programming languages I'm currently learning are <mark>HTML</mark>, <mark>CSS</mark>, And <mark>C#</mark>.<br>
+                It might seem confusing to some, but this approach helps me manage stress and pressure. If one language is giving me a hard time, instead of stressing, I just move to another one. Eventually, that becomes my stress reliever, helping me calm down and continue doing what I love rather than walking away. Web development is a long journey, so moving to another language is like a short stop in a long journey.</p>
+            </fieldset>
+
+                    <!-- Simple AI assistant UI -->
+                    <fieldset>
+                        <legend><h2>AI Assistant</h2></legend>
+                        <p>Ask the on-device AI (Ollama) a question. The website will send your prompt to the FastAPI backend which forwards it to your local Ollama instance.</p>
+                        <textarea id="ai-prompt" rows="3" style="width:100%; box-sizing:border-box; margin-bottom:8px;" placeholder="Ask something like: 'Summarize my bio' or 'Write a friendly greeting.'"></textarea>
+                        <div style="display:flex; gap:8px; margin-bottom:8px;">
+                                        <select id="ai-model" style="flex:0 0 220px;">
+                                            <option value="gemma3:270m">gemma3:270m</option>
+                                            <!-- Add your model names here if different -->
+                                        </select>
+                            <button id="ai-send">Send</button>
+                            <button id="ai-clear">Clear</button>
+                        </div>
+                        <div id="ai-status" style="color:#6b7280; margin-bottom:8px;"></div>
+                        <div id="ai-response" style="white-space:pre-wrap; background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #e6eef8;"></div>
+                    </fieldset>
+        </div>
+            <script>
+                const sendBtn = document.getElementById('ai-send');
+                const clearBtn = document.getElementById('ai-clear');
+                const promptEl = document.getElementById('ai-prompt');
+                const modelEl = document.getElementById('ai-model');
+                const statusEl = document.getElementById('ai-status');
+                const responseEl = document.getElementById('ai-response');
+
+                async function sendPrompt() {
+                    const prompt = promptEl.value.trim();
+                    if (!prompt) return;
+                    statusEl.textContent = 'Sending...';
+                    responseEl.textContent = '';
+
+                    try {
+                        const res = await fetch('http://127.0.0.1:8080/api/ollama', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ prompt, model: modelEl.value })
+                        });
+
+                        if (!res.ok) {
+                            const err = await res.text();
+                            statusEl.textContent = 'Error from server';
+                            responseEl.textContent = err;
+                            return;
+                        }
+
+                        const data = await res.json();
+                        // The backend returns { ok: true, ollama: <ollama response> }
+                        if (data.ok && data.ollama) {
+                            const ollama = data.ollama;
+                            if (ollama.text) {
+                                // Our backend already combined the streamed responses
+                                responseEl.textContent = ollama.text;
+                                statusEl.textContent = 'Response received';
+                            } else if (ollama.response) {
+                                // Single response field
+                                responseEl.textContent = ollama.response;
+                                statusEl.textContent = 'Response received';
+                            } else if (ollama.raw_lines) {
+                                // Multiple lines returned but no combined text
+                                const lines = ollama.raw_lines
+                                    .map(l => {
+                                        try {
+                                            const obj = JSON.parse(l);
+                                            return obj.response || obj.text || '';
+                                        } catch (e) {
+                                            return '';
+                                        }
+                                    })
+                                    .filter(l => l)
+                                    .join('');
+                                responseEl.textContent = lines;
+                                statusEl.textContent = 'Response received';
+                            } else {
+                                // Unknown format, show raw JSON
+                                responseEl.textContent = JSON.stringify(ollama, null, 2);
+                                statusEl.textContent = 'Received unknown response format';
+                            }
+                        } else {
+                            statusEl.textContent = 'Invalid response format';
+                            responseEl.textContent = 'The server response was not in the expected format:\n\n' + 
+                                JSON.stringify(data, null, 2);
+                        }
+                    } catch (e) {
+                        statusEl.textContent = 'Error';
+                        responseEl.textContent = `Failed to get AI response: ${e.message}\n\n` +
+                            'Check that both the FastAPI server and Ollama are running:\n' +
+                            '1. Start Ollama: ollama serve\n' +
+                            '2. Start server: uvicorn app:app --host 127.0.0.1 --port 8000';
+                    }
+                }
+
+                sendBtn.addEventListener('click', sendPrompt);
+                clearBtn.addEventListener('click', () => { promptEl.value = ''; responseEl.textContent = ''; statusEl.textContent = ''; });
+
+                // Allow Ctrl+Enter to send
+                promptEl.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) sendPrompt(); });
+            </script>
+    </body>
+</html>
